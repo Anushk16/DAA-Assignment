@@ -6,7 +6,7 @@ linearsearch(int a[],int n,int key)
     for(int i=1;i<=n;i++)
         if(a[i]==key)
         return i;
-    return NULL;
+    return n;
 }
 
 int main()
@@ -29,7 +29,7 @@ int main()
         cin>>key;
         int result;
        result=linearsearch(a,n,key);
-       (result==NULL)?cout<<"Not Present"
+       (result==NULL)?cout<<"Not Present-"<<result"
        :cout<<"Present-"<<result;
        cout<<endl;
     }
