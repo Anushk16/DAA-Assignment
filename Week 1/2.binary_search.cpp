@@ -28,7 +28,7 @@ int main()
     cout<<"Enter the no. of test cases:";
     cin>>test;
     while(test--)
-    {
+     {
         int n;
         cout<<"Enter the size of array:";
         cin>>n;
