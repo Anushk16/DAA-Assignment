@@ -1,28 +1,24 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int t;
-    cin>>t;
-    while(t--) {
-        int n;
-        cin>>n;
-        int *arr = new int[n];
-        for(int i = 0; i < n; i++) {
-            cin>>arr[i];
+    int m;
+    cin>>m;
+    int a1[m];
+    for(int i = 0; i < m; i++)
+       cin>>a1[i];
+    int n;
+    cin>>n;
+    int a2[n];
+    for(int i = 0; i < n; i++)
+       cin>>a2[i];
+    int i = 0, j = 0;
+    while(i < m && j < n) {
+        if(a1[i] == a2[j]) {
+            cout<<a1[i]<<" ";
+            i++; j++;
         }
-        int k;
-        cin>>k;
-        priority_queue<int> pq;
-        for(int i = 0; i < k; i++) {
-            pq.push(arr[i]);
-        }
-        for(int i = k; i < n; i++) {
-            pq.push(arr[i]);
-            if(pq.size() > k) pq.pop();
-        }
-        if(pq.empty()) cout<<"Not present"<<endl;
-        else cout<<pq.top()<<endl;
-        delete []arr;
+        else if(a1[i] < a2[j]) i++;
+        else j++;
     }
 }
